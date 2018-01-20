@@ -1,7 +1,6 @@
 #環境変数
 export LANG=ja_JP.UTF-8
  
- 
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -35,14 +34,11 @@ select-word-style default
 # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
-########################################
-#エイリアス
-alias -s {py}=python
-alias -s {rb}=ruby
  
 ########################################
 # 補完
 # 補完機能を有効にする
+########################################
 autoload -Uz compinit
 compinit
  
@@ -59,9 +55,9 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
  
- 
 ########################################
 # vcs_info
+########################################
  
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
@@ -76,6 +72,7 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
  
 ########################################
 # オプション
+########################################
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
  
@@ -122,12 +119,16 @@ setopt extended_glob
  
 ########################################
 # キーバインド
+########################################
  
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
 bindkey '^R' history-incremental-pattern-search-backward
  
 ########################################
 # エイリアス
+########################################
+alias -s {py}=python
+alias -s {rb}=ruby
  
 alias la='ls -a'
 alias ll='ls -l'
@@ -137,13 +138,7 @@ alias cp='cp -i'
 alias mv='mv -i'
  
 alias mkdir='mkdir -p'
-#texディレクトリを作る20141104
-alias mktexdir='maketexdir'
-function maketexdir(){
-	mkdir $1
-	cp -r ~/Documents/mymasterthesis/tex/tex_template/* $1
-}
- 
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
  
@@ -164,10 +159,9 @@ elif which putclip >/dev/null 2>&1 ; then
 alias -g C='| putclip'
 fi
  
- 
- 
 ########################################
 # OS 別の設定
+########################################
 case ${OSTYPE} in
 darwin*)
 #Mac用の設定
@@ -179,29 +173,6 @@ linux*)
 ;;
 esac
  
-# vim:set ft=zsh:
-
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/hiromu/Applications/cocos2d-x-3.4/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/hiromu/Applications/cocos2d-x-3.4/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/Applications/sdk
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-# Add environment variable ANT_ROOT for cocos2d-x
-export ANT_ROOT=/usr/local/Cellar/ant/1.9.4/libexec/bin
-export PATH=$ANT_ROOT:$PATH
-
-# Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/Users/hiromu/Applications/android-ndk-r10d
-export PATH=$NDK_ROOT:$PATH
 # Python virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
