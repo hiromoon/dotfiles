@@ -30,3 +30,25 @@ hook_source = '''
         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
 on_i = 1
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_source = '''
+call denite#custom#var('file_rec', 'command',
+      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#var('grep', 'separator', [])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--nocolor', '--nogroup'])
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_path = '.*'
+on_i = 1
