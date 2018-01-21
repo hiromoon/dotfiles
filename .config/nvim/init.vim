@@ -33,3 +33,4 @@ let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 let g:airline_theme = 'molokai'
 let g:indent_guides_enable_on_vim_startup = 1
 
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
