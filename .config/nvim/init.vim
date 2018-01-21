@@ -22,6 +22,7 @@ endif
 filetype plugin indent on
 syntax enable
 
+set tabstop=2 shiftwidth=2 expandtab
 set number
 colorscheme molokai
 set t_Co=256
@@ -30,4 +31,5 @@ set background=dark
 
 let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 let g:airline_theme = 'molokai'
+let g:indent_guides_enable_on_vim_startup = 1
 
