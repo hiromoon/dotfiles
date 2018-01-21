@@ -1,9 +1,9 @@
 #! /bin/bash
 
+CONFIGS=(.zshrc .vimrc .tmux.conf .config .peco)
 DOTFILES_DIR=`pwd`
-echo $DOTFILES_DIR
-ln -s $DOTFILES_DIR/.zshrc $HOME/.zshrc
-ln -s $DOTFILES_DIR/.vimrc $HOME/.vimrc
-ln -s $DOTFILES_DIR/.tmux.conf $HOME/.tmux.conf
-ln -s $DOTFILES_DIR/.config $HOME/.config
-ln -s $DOTFILES_DIR/.peco $HOME/.peco
+for c in ${CONFIGS[@]}
+do
+  ln -s $DOTFILES_DIR/$c $HOME/$c
+done
+
