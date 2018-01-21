@@ -21,7 +21,7 @@ setopt re_match_pcre
 
 # プロンプト
 PROMPT="[%n] %{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(＠ﾟ□ﾟ)ノ<!ZzZz(＠￣￢￣%)ノ<)%{${reset_color}%}"
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(＠ﾟ□ ﾟ)ノ<!ZzZz(＠￣￢￣%)ノ<)%{${reset_color}%}"
 PROMPT2='[%n]>'
 
 SPROMPT="%{$fg[red]%}%{$suggest%}(＠ﾟ△ﾟ%)ノ < もしかして %B%r%b %{$fg[red]%}かな? [そう!(y), 違う!(n),a,e]:${reset_color} "
