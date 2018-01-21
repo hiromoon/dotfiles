@@ -173,10 +173,20 @@ linux*)
 ;;
 esac
  
-# Python virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# Python
+# pyenv
+export PYENV_ROOT=$HOME/.pyenv
+# virtualenv
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
+
+export XDG_CONFIG_HOME=$HOME/.config
 
 # Node
-export PATH=/usr/local/share/npm/bin:$PATH
+export NPM_PATH=/usr/local/share/npm/bin
 export NODE_PATH=/usr/local/lib/node_modules
+
+export PATH=$PYENV_ROOT/bin:$NPM_PATH:$NODE_PATH:$PATH
+
+eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
