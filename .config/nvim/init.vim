@@ -32,6 +32,7 @@ set background=dark
 let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 let g:airline_theme = 'molokai'
 let g:indent_guides_enable_on_vim_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 "============================
 "NERDTree
@@ -53,12 +54,16 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_open_list = 0
 let g:ale_keep_list_window_open = 0
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 let g:ale_linters = {
       \  'javascript': ['eslint'],
+      \  'elixir': ['credo'],
       \}
 let g:ale_fixers = {
-      \  'javascript': ['prettier', 'eslint'],
+      \  'javascript': ['prettier-eslint', 'eslint'],
+      \  'elixir': ['mix_format'],
       \}
 
 nmap [ale] <Nop>
