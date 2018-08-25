@@ -2,10 +2,10 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=/Users/hiromu/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/hiromu/.vim/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundle/')
-  call dein#begin('~/.vim/bundle/')
+if dein#load_state('~/.vim/.cache/')
+  call dein#begin('~/.vim/.cache/')
   
   let s:toml_dir = expand('~/.config/dein')
   call dein#load_toml(s:toml_dir . '/plugins.toml', {'lazy': 0})
