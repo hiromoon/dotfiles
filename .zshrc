@@ -205,7 +205,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 export NPM_PATH=/usr/local/share/npm/bin
 export NODE_PATH=/usr/local/lib/node_modules
 
-export PATH=$PYENV_ROOT/bin:$NPM_PATH:$NODE_PATH:$PATH
+# Golang
+export GOPATH=~/.go
+
+export PATH=$PYENV_ROOT/bin:$NPM_PATH:$NODE_PATH:$GOPATH:$PATH
 
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
+

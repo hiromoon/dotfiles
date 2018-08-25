@@ -2,16 +2,18 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=/Users/hiromu/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/hiromu/.vim/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundle/')
-  call dein#begin('~/.vim/bundle/')
+if dein#load_state('~/.vim/.cache/')
+  call dein#begin('~/.vim/.cache/')
   
   let s:toml_dir = expand('~/.config/dein')
   call dein#load_toml(s:toml_dir . '/plugins.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
-  
+  call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
+
   call dein#end()
   call dein#save_state()
 endif
@@ -57,16 +59,19 @@ let g:ale_open_list = 0
 let g:ale_keep_list_window_open = 0
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_python_flake8_executable = 'pipenv'
 
 let g:ale_linters = {
       \  'javascript': ['eslint'],
       \  'elixir': ['credo'],
-      \  'python': ['flake8']
+      \  'python': ['flake8'],
+      \  'go': ['golint']
       \}
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
       \  'elixir': ['mix_format'],
-      \  'python': ['yapf']
+      \  'python': ['yapf'],
+      \  'go': ['gofmt']
       \}
 
 nmap [ale] <Nop>
