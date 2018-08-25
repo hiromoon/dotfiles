@@ -12,6 +12,7 @@ if dein#load_state('~/.vim/.cache/')
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
   
   call dein#end()
   call dein#save_state()
@@ -63,12 +64,14 @@ let g:ale_python_flake8_executable = 'pipenv'
 let g:ale_linters = {
       \  'javascript': ['eslint'],
       \  'elixir': ['credo'],
-      \  'python': ['flake8']
+      \  'python': ['flake8'],
+      \  'go': ['golint']
       \}
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
       \  'elixir': ['mix_format'],
-      \  'python': ['yapf']
+      \  'python': ['yapf'],
+      \  'go': ['gofmt']
       \}
 
 nmap [ale] <Nop>
