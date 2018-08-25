@@ -10,6 +10,7 @@ if dein#load_state('~/.vim/.cache/')
   let s:toml_dir = expand('~/.config/dein')
   call dein#load_toml(s:toml_dir . '/plugins.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
   
   call dein#end()
