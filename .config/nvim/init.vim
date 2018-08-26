@@ -1,3 +1,6 @@
+"============================
+"Dein
+"============================
 if &compatible
   set nocompatible
 endif
@@ -21,6 +24,10 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+"============================
+"基本設定
+"============================
 
 filetype plugin indent on
 syntax enable
