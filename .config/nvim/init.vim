@@ -2,7 +2,7 @@ if &compatible
   set nocompatible
 endif
 
-set runtimepath+=/Users/hiromu/.vim/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.vim/.cache/')
   call dein#begin('~/.vim/.cache/')
