@@ -1,8 +1,11 @@
+"============================
+"Dein
+"============================
 if &compatible
   set nocompatible
 endif
 
-set runtimepath+=/Users/hiromu/.vim/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.vim/.cache/')
   call dein#begin('~/.vim/.cache/')
@@ -13,7 +16,7 @@ if dein#load_state('~/.vim/.cache/')
   call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
-  
+
   call dein#end()
   call dein#save_state()
 endif
@@ -21,6 +24,10 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+"============================
+"基本設定
+"============================
 
 filetype plugin indent on
 syntax enable

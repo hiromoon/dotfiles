@@ -158,6 +158,8 @@ alias mv='mv -i'
  
 alias mkdir='mkdir -p'
 
+alias gitchk='git checkout `git branch | peco`'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
  

@@ -71,40 +71,22 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=/Users/hiromu/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
-" Required:
-call dein#begin('/Users/hiromu/.vim/bundle/')
+if dein#load_state('~/.vim/.cache/')
+  call dein#begin('~/.vim/.cache/')
+  
+  let s:toml_dir = expand('~/.config/dein')
+  call dein#load_toml(s:toml_dir . '/plugins.toml', {'lazy': 0})
+  call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+  call dein#end()
+  call dein#save_state()
+endif
 
-" Add or remove your plugins here:
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimproc')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tomasr/molokai')
-call dein#add('nathanaelkane/vim-indent-guides')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/neocomplete')
-call dein#add('othree/html5.vim')
-call dein#add('hail2u/vim-css3-syntax')
-call dein#add('jelera/vim-javascript-syntax')
-call dein#add('hokaccha/vim-html5validator')
-call dein#add('elixir-lang/vim-elixir')
-call dein#add('tpope/vim-surround')
-
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
