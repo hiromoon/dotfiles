@@ -37,6 +37,9 @@ let g:airline_theme = 'molokai'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:deoplete#enable_at_startup = 1
 
+tnoremap <Esc> <C-\><C-n>
+
+
 "============================
 "NERDTree
 "============================
