@@ -217,3 +217,4 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
 
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
