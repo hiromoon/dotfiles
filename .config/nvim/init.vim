@@ -71,17 +71,21 @@ let g:ale_keep_list_window_open = 0
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_python_flake8_executable = 'pipenv'
+let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_ruby_rufo_executable = 'bundle'
 
 let g:ale_linters = {
       \  'javascript': ['eslint'],
       \  'elixir': ['credo'],
       \  'python': ['flake8'],
+      \  'ruby': ['rubocop'],
       \  'go': ['golint']
       \}
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
       \  'elixir': ['mix_format'],
       \  'python': ['yapf'],
+      \  'ruby': ['rufo', 'rubocop'],
       \  'go': ['gofmt']
       \}
 
