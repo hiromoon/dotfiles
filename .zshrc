@@ -214,4 +214,6 @@ export PATH=$PYENV_ROOT/bin:$NPM_PATH:$NODE_PATH:$GOPATH:$PATH
 
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
+eval "$(rbenv init -)"
+
 
