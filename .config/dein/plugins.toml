@@ -42,3 +42,6 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'wlangstroth/vim-racket'
