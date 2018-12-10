@@ -79,14 +79,14 @@ let g:ale_linters = {
       \  'elixir': ['credo'],
       \  'python': ['flake8'],
       \  'ruby': ['rubocop'],
-      \  'go': ['golint']
+      \  'go': ['go_vet', 'golint']
       \}
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
       \  'elixir': ['mix_format'],
-      \  'python': ['yapf'],
+      \  'python': ['yapf', 'autopep8'],
       \  'ruby': ['rufo', 'rubocop'],
-      \  'go': ['gofmt']
+      \  'go': ['gofmt', 'goimports']
       \}
 
 nmap [ale] <Nop>
