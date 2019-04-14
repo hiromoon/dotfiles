@@ -76,6 +76,7 @@ let g:ale_ruby_rufo_executable = 'bundle'
 
 let g:ale_linters = {
       \  'javascript': ['eslint'],
+      \  'typescript': ['eslint'],
       \  'elixir': ['credo'],
       \  'python': ['flake8'],
       \  'ruby': ['rubocop'],
@@ -83,6 +84,7 @@ let g:ale_linters = {
       \}
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
+      \  'typescript': ['prettier-eslint', 'eslint'],
       \  'elixir': ['mix_format'],
       \  'python': ['yapf', 'autopep8'],
       \  'ruby': ['rufo', 'rubocop'],
