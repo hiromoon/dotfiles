@@ -75,9 +75,12 @@ let g:ale_python_flake8_executable = 'pipenv'
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_ruby_rufo_executable = 'bundle'
 
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+
 let g:ale_linters = {
       \  'javascript': ['eslint'],
       \  'typescript': ['eslint'],
+      \  'vue': ['eslint', 'vls'],
       \  'elixir': ['credo'],
       \  'python': ['flake8'],
       \  'ruby': ['rubocop'],
@@ -86,6 +89,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
       \  'typescript': ['prettier-eslint', 'eslint'],
+      \  'vue': ['eslint'],
       \  'elixir': ['mix_format'],
       \  'python': ['yapf', 'autopep8'],
       \  'ruby': ['rufo', 'rubocop'],
