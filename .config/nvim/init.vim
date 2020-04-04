@@ -7,8 +7,8 @@ endif
 
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/.cache/')
-  call dein#begin('~/.vim/.cache/')
+if dein#load_state('~/.vim/.cache/dein')
+  call dein#begin('~/.vim/.cache/dein')
   
   let s:toml_dir = expand('~/.config/dein')
   call dein#load_toml(s:toml_dir . '/plugins.toml', {'lazy': 0})
@@ -17,6 +17,11 @@ if dein#load_state('~/.vim/.cache/')
   call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   call dein#end()
   call dein#save_state()
