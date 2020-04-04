@@ -1,3 +1,7 @@
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = ['vue']
+
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
+on_ft = ['vue']
