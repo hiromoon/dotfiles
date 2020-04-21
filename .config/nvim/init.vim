@@ -80,11 +80,15 @@ let g:ale_python_flake8_executable = 'pipenv'
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_ruby_rufo_executable = 'bundle'
 
-let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+let g:ale_linter_aliases = {
+      \  'vue': ['vue', 'javascript'],
+      \  'tsx': ['css', 'typescript'],
+      \}
 
 let g:ale_linters = {
       \  'javascript': ['eslint'],
       \  'typescript': ['eslint'],
+      \  'tsx': ['eslint', 'stylelint'],
       \  'vue': ['eslint', 'vls'],
       \  'elixir': ['credo'],
       \  'python': ['flake8'],
