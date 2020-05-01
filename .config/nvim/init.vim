@@ -7,15 +7,21 @@ endif
 
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/.cache/')
-  call dein#begin('~/.vim/.cache/')
+if dein#load_state('~/.vim/.cache/dein')
+  call dein#begin('~/.vim/.cache/dein')
   
   let s:toml_dir = expand('~/.config/dein')
   call dein#load_toml(s:toml_dir . '/plugins.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/vue.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/elixir.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/python.toml', {'lazy': 1})
   call dein#load_toml(s:toml_dir . '/go.toml', {'lazy': 1})
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   call dein#end()
   call dein#save_state()
@@ -76,9 +82,16 @@ let g:ale_python_flake8_executable = 'pipenv'
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_ruby_rufo_executable = 'bundle'
 
+let g:ale_linter_aliases = {
+      \  'vue': ['vue', 'javascript'],
+      \  'tsx': ['css', 'typescript'],
+      \}
+
 let g:ale_linters = {
       \  'javascript': ['eslint'],
       \  'typescript': ['eslint'],
+      \  'tsx': ['eslint', 'stylelint'],
+      \  'vue': ['eslint', 'vls'],
       \  'elixir': ['credo'],
       \  'python': ['flake8'],
       \  'ruby': ['rubocop'],
@@ -87,6 +100,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \  'javascript': ['prettier-eslint', 'eslint'],
       \  'typescript': ['prettier-eslint', 'eslint'],
+      \  'vue': ['eslint'],
       \  'elixir': ['mix_format'],
       \  'python': ['yapf', 'autopep8'],
       \  'ruby': ['rufo', 'rubocop'],
@@ -106,3 +120,19 @@ nnoremap <silent> <C-k><C-g> :<C-u>Denite grep<CR>
 nnoremap <silent> <C-k><C-l> :<C-u>Denite line<CR>
 nnoremap <silent> <C-k><C-u> :<C-u>Denite file_mru<CR>
 nnoremap <silent> <C-k><C-y> :<C-u>Denite neoyank<CR>
+
+"============================
+"vim-jsx-typescript
+"============================
+" dark red
+hi tsxTagName guifg=#E06C75
+
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxCloseTagName guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
