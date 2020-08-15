@@ -218,3 +218,5 @@ eval "$(rbenv init -)"
 
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# github cli
+eval "$(gh completion -s zsh)"
